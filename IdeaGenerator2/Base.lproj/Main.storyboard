@@ -18,19 +18,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0t-kG-5NE">
                                 <rect key="frame" x="50" y="99" width="314" height="698"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obh-ty-gDO">
-                                        <rect key="frame" x="0.0" y="384" width="314" height="314"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="obh-ty-gDO" secondAttribute="height" multiplier="1:1" id="18h-rf-jO0"/>
-                                        </constraints>
-                                        <state key="normal" image="china"/>
-                                        <connections>
-                                            <action selector="chineseButtoncilck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JFh-KZ-Ok1"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-X6-kOH">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="314"/>
+                                        <rect key="frame" x="0.0" y="192" width="314" height="314"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="hg9-X6-kOH" secondAttribute="height" multiplier="1:1" id="bCJ-K6-wdx"/>
                                             <constraint firstAttribute="width" secondItem="hg9-X6-kOH" secondAttribute="height" multiplier="1:1" id="eMs-3H-74O"/>
                                         </constraints>
                                         <state key="normal" image="ukflag"/>
@@ -41,13 +32,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="obh-ty-gDO" secondAttribute="trailing" id="CYB-VX-eGg"/>
                                     <constraint firstAttribute="trailing" secondItem="hg9-X6-kOH" secondAttribute="trailing" id="Fkg-Ep-cuh"/>
-                                    <constraint firstAttribute="bottom" secondItem="obh-ty-gDO" secondAttribute="bottom" id="OJJ-lb-6bE"/>
                                     <constraint firstItem="hg9-X6-kOH" firstAttribute="leading" secondItem="W0t-kG-5NE" secondAttribute="leading" id="SqR-Z6-npB"/>
-                                    <constraint firstItem="hg9-X6-kOH" firstAttribute="top" secondItem="W0t-kG-5NE" secondAttribute="top" id="ca0-NV-hqV"/>
-                                    <constraint firstItem="obh-ty-gDO" firstAttribute="top" secondItem="hg9-X6-kOH" secondAttribute="bottom" constant="70" id="f99-jv-zoK"/>
-                                    <constraint firstItem="obh-ty-gDO" firstAttribute="leading" secondItem="W0t-kG-5NE" secondAttribute="leading" id="x0E-DA-FVg"/>
+                                    <constraint firstAttribute="trailing" secondItem="hg9-X6-kOH" secondAttribute="trailing" id="VnL-Aw-RGX"/>
+                                    <constraint firstItem="hg9-X6-kOH" firstAttribute="top" secondItem="W0t-kG-5NE" secondAttribute="top" constant="192" id="czU-7i-IdX"/>
+                                    <constraint firstAttribute="bottom" secondItem="hg9-X6-kOH" secondAttribute="bottom" constant="192" id="jkg-Hs-NfJ"/>
+                                    <constraint firstItem="hg9-X6-kOH" firstAttribute="leading" secondItem="W0t-kG-5NE" secondAttribute="leading" id="xBz-T4-HUl"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -60,7 +50,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="chineseButton" destination="obh-ty-gDO" id="Gb5-Hy-21U"/>
                         <outlet property="englishButton" destination="hg9-X6-kOH" id="6In-wr-LZR"/>
                         <segue destination="2yx-Bk-Oab" kind="presentation" identifier="selectCategory" id="ok7-fH-45H"/>
                     </connections>
@@ -303,7 +292,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="china" width="250" height="250"/>
-        <image name="ukflag" width="651" height="640"/>
+        <image name="ukflag" width="641" height="640"/>
     </resources>
 </document>

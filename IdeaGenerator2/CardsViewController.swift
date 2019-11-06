@@ -20,6 +20,9 @@ class CardsViewController: UIViewController {
     var scifiWords: [String:[String]] = ["Adverb":["apocalyptic","mind-bending","galactic:","gravitationally","virtually"],"Verb":["teleport","magnetise","time-travelling","hovering","nuclearising"],"Noun":["aliens","android","robots","vortex","machine","electricity"],"Adjective":["futuristic","steam-powered","scientific","metallic","atomic","technological"],"Preposition":["into", "in front of","in place of","prior to","round","off","on","throughout","about","above","after"],"Location":["spaceship","galaxy","virtual reality","alternate universe","interplanetary"]]
     var fantasyWords: [String:[String]] = ["Adverb":["mischievous","magically","peculiarly","transformative","viciously"],"Verb":["enchant","curse","heal","chant","revive","entrance"],"Noun":["dragons","pegasus","cauldron","potion","elves","giants","familiar","pirates","goblin","sorcerer","necromancer","ritual"],"Adjective":["rural","overgrown","evil","malevolent","benevolent","idyllic"],"Preposition":["into", "in front of","in place of","prior to","round","off","on","throughout","about","above","after"],"Location":[" castle","hut","under the sea","burrow","cave","tower"]]
     var horrorWords: [String:[String]] = ["Adverb":["suddenly","quickly","creepily","silently","carefully"],"Verb":["slam","howl","growl","sprint","cackled","spooked","cracked"],"Noun":["ghosts","zombie","blood stains","draft","bat"],"Adjective":["slimy","haunted","abandoned","cold","deprived","weathered","matted"],"Preposition":["into", "in front of","in place of","prior to","round","off","on","throughout","about","above","after"],"Location":["basement","hotel","cabin","mansion","forest"]]
+    
+    var mysteryWords: [String:[String]] = ["Adverb":["suspiciously","reasonably","discreetly","murderously","efficiently","deceptively"],"Verb":["suspect","freeze","explain","search","questioned","knived"],"Noun":["pistol","body","crime","evidence","reasoning","mental health"],"Adjective":["mutilated","suicidal", "hidden", "secret","criminal"],"Preposition":["into", "in front of","in place of","prior to","round","off","on","throughout","about","above","after"],"Location":["hide out","headquarters","sack","crime scene","sewer","mental institution"]]
+    
     func pickRandomWord(category: String, type: String) -> String {
         var word = ""
         var wordsOfCategory: [String] = []
@@ -37,12 +40,22 @@ class CardsViewController: UIViewController {
             wordsOfCategory = horrorWords[type]!
             let randomIndex = arc4random_uniform(UInt32(wordsOfCategory.count))
             word = wordsOfCategory[Int(randomIndex)]
+            
+        case "Mystery":
+        wordsOfCategory = mysteryWords[type]!
+        let randomIndex = arc4random_uniform(UInt32(wordsOfCategory.count))
+        word = wordsOfCategory[Int(randomIndex)]
         default:
             break
         }
         return word
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        for i in 0..<3 {
+            words[i] = pickRandomWord(category: category, type: combinations[i])
+        }
+        
         if sender.accessibilityIdentifier == "cardButton1" {
             sender.setTitle(words[0], for: .normal)
         } else if sender.accessibilityIdentifier == "cardButton2" {
@@ -63,6 +76,7 @@ class CardsViewController: UIViewController {
         for i in 0..<3 {
             words[i] = pickRandomWord(category: category, type: combinations[i])
         }
+        nextButton3.isHidden = true
     }
     
 
