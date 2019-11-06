@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var nextbutton: UIButton!
     
-    var categories = ["Fantasy","Sci-Fi", "Horror"]
+    var categories = ["Fantasy","Sci-Fi", "Horror", "Mystery"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
